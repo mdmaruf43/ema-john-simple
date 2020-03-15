@@ -10,13 +10,15 @@
     background-color: black;
     line-height: 40px;
     font-size: 20px;
+    text-align: left;
+    margin-bottom: 0;
 }
 
 nav a{
     color: white;
     text-decoration: none;
-    margin-right: 20px;
-    padding: 5px;
+    margin: 10px 10px;
+    padding: 6px;
 }
 nav a:hover{
     background-color: gray;
