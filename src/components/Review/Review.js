@@ -5,10 +5,13 @@ import { getDatabaseCart, removeFromDatabaseCart, processOrder } from '../../uti
 import fakeData from '../../fakeData';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import Cart from '../Cart/Cart';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../Login/useAuth';
 
 const Review = (props) => {
     const [cart, setCart] = useState([]);
     const [orderPlaced, setOrderPlaced] = useState(false);
+    const auth = useAuth();
     const handlePlaceOrder = () => {
         setCart([]);
         setOrderPlaced(true);
@@ -41,10 +44,18 @@ const Review = (props) => {
                     cart.map(pd => <ReviewItem key={pd.key} removeProduct = {removeProduct} product={pd}></ReviewItem>)
                 }
                 {thankyou}
+                {
+                    !cart.length && <h1>Your Cart is empty. <a href="/shop">Keep Shopping</a></h1>
+                }
             </div>
             <div className="cart-container">
                 <Cart cart={cart}>
-                    <button className="btn" onClick={handlePlaceOrder}>Place Order</button>
+                    <Link to="/shipment">
+                        {   auth.user ?
+                            <button className="btn">Proceed Shipment</button>
+                            : <button className="btn">Login to Proceed</button>
+                        }
+                    </Link>
                 </Cart>
             </div>
         </div>

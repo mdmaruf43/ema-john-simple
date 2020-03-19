@@ -1,8 +1,11 @@
 import React from 'react';
+// import { UserContext } from '../../App';
+// import { useAuth } from '../Login/useAuth';
 
 const Cart = (props) => {
     const cart = props.cart;
-    //console.log(cart);
+    // const auth = useAuth();
+    // console.log(auth.user);
     //const total = cart.reduce((total, product) => total + product.price * product.quantity, 0);
     let total = 0;
     for(let i = 0; i < cart.length; i++){
