@@ -28,7 +28,7 @@ const Header = () => {
             <nav>
                 <a href="/shop">Shop</a>
                 <a href="/review">Order Review</a>
-                <a href="/inventory">Manage Inventory</a>
+                <a href="/orders">Order History</a>
                 {auth.user && <span style={{color: 'yellow'}}>Welcome, {auth.user.name}</span>}
                 {
                     auth.user ? <a href="/login">Sign out</a>
