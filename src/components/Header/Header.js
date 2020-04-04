@@ -1,18 +1,17 @@
-import React, { useContext, useState, useRef, useEffect } from 'react';
+import React from 'react';
 import logo from '../../images/logo.png';
 import './Header.css';
-import { UserContext } from '../../App';
 import { useAuth } from '../Login/useAuth';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
-const usePrevious = value => {
-    const prev = useRef();
-    useEffect( () => {
-        console.log(value);
-        prev.current = value;
-    }, [value])
-    return prev.current;
-}
+// const usePrevious = value => {
+//     const prev = useRef();
+//     useEffect( () => {
+//         console.log(value);
+//         prev.current = value;
+//     }, [value]) 
+//     return prev.current;
+// }
 
 const Header = () => {
     const auth = useAuth();
@@ -28,7 +27,7 @@ const Header = () => {
             <nav>
                 <a href="/shop">Shop</a>
                 <a href="/review">Order Review</a>
-                <a href="/orders">Order History</a>
+                <a href="/inventory">Inventory</a>
                 {auth.user && <span style={{color: 'yellow'}}>Welcome, {auth.user.name}</span>}
                 {
                     auth.user ? <a href="/login">Sign out</a>
