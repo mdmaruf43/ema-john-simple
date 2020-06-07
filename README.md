@@ -18,3 +18,5 @@ This is a complete e-commerce MERN Stack project. Inspire from **Amazon**. I jus
 - Stripe Payment
 - Express
 - MongoDB 
+
+**Backend Repo:** [link](https://github.com/mdmaruf43/ema-jhon-simple-server)
