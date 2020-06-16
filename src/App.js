@@ -20,31 +20,31 @@ function App() {
   return (
     <AuthContextProvider>
       <Router>
-        <Header></Header>
+        <Header />
         <Switch>
           <Route path="/shop">
-            <Shop></Shop>
+            <Shop />
           </Route>
           <Route path="/review">
-            <Review></Review>
+            <Review /> 
           </Route>
           <Route path="/inventory">
-            <Inventory></Inventory>
+            <Inventory />
           </Route>
           <Route path="/product/:productKey">
-            <ProductDetail></ProductDetail>
+            <ProductDetail />
           </Route>
           <Route exact path="/">
-            <Shop></Shop>
+            <Shop />
           </Route>
           <PrivateRoute path="/shipment">
-            <Shipment></Shipment>
+            <Shipment />
           </PrivateRoute>
           <Route path="/login">
-            <Login></Login>
+            <Login />
           </Route>
           <Route path="*">
-            <NotFound></NotFound>
+            <NotFound />
           </Route>
         </Switch>
       </Router>
